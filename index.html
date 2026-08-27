@@ -1,13 +1,406 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Desafío Juvenil 2026 | Sed Santos</title>
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0d0d0d;
+      color: white;
+    }
+
+
+    /* =========================
+       PORTADA
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      background: #0d0d0d;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+      padding: 40px 20px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+
+    /* Resplandor rojo detrás del logo */
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 450px;
+      height: 450px;
+
+      background: #ed1c24;
+
+      border-radius: 50%;
+      filter: blur(150px);
+
+      opacity: 0.15;
+
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+
+
+    .event-name {
+      position: relative;
+      z-index: 2;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      letter-spacing: 6px;
+      text-transform: uppercase;
+
+      margin-bottom: 25px;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+      position: relative;
+      z-index: 2;
+
+      width: min(440px, 82vw);
+      height: auto;
+
+      display: block;
+    }
+
+
+    /* FECHA */
+
+    .date {
+      position: relative;
+      z-index: 2;
+
+      margin-top: 25px;
+
+      font-size: 20px;
+      font-weight: 700;
+
+      letter-spacing: 4px;
+    }
+
+
+    /* VERSÍCULO */
+
+    .verse {
+      position: relative;
+      z-index: 2;
+
+      max-width: 680px;
+
+      margin: 27px auto 0;
+
+      font-size: 16px;
+      line-height: 1.7;
+
+      color: #d5d5d5;
+    }
+
+
+    .verse-reference {
+      position: relative;
+      z-index: 2;
+
+      margin-top: 10px;
+
+      font-size: 14px;
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
+      color: white;
+    }
+
+
+    /* BOTÓN */
+
+    .button {
+      position: relative;
+      z-index: 2;
+
+      display: inline-block;
+
+      margin-top: 32px;
+
+      padding: 15px 32px;
+
+      background: #ed1c24;
+
+      color: white;
+
+      text-decoration: none;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-size: 12px;
+      font-weight: bold;
+
+      transition: 0.3s;
+    }
+
+
+    .button:hover {
+      background: white;
+      color: #111111;
+    }
+
+
+    /* FLECHITA */
+
+    .arrow {
+      position: absolute;
+
+      bottom: 20px;
+
+      z-index: 2;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-size: 26px;
+
+      animation: bajar 1.5s infinite;
+    }
+
+
+    @keyframes bajar {
+
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(8px);
+      }
+
+    }
+
+
+    /* =========================
+       SEGUNDA SECCIÓN
+    ========================= */
+
+    .intro {
+      min-height: 100vh;
+
+      background: #ed1c24;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      padding: 90px 25px;
+    }
+
+
+    .intro-content {
+      max-width: 850px;
+    }
+
+
+    .intro-small {
+      font-size: 13px;
+
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 20px;
+    }
+
+
+    .intro h2 {
+      font-size: clamp(48px, 9vw, 100px);
+
+      text-transform: uppercase;
+
+      line-height: 0.9;
+
+      margin-bottom: 35px;
+    }
+
+
+    .intro p {
+      font-size: 18px;
+
+      line-height: 1.8;
+    }
+
+
+    /* =========================
+       CELULAR
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .hero {
+        padding: 30px 20px;
+      }
+
+      .event-name {
+        font-size: 11px;
+        letter-spacing: 3px;
+        margin-bottom: 18px;
+      }
+
+      .logo {
+        width: 88vw;
+        max-width: 390px;
+      }
+
+      .date {
+        font-size: 15px;
+        letter-spacing: 2px;
+      }
+
+      .verse {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .verse-reference {
+        font-size: 12px;
+      }
+
+      .button {
+        padding: 14px 25px;
+      }
+
+      .intro h2 {
+        font-size: 55px;
+      }
+
+      .intro p {
+        font-size: 16px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
 <body>
-  <h1>SED SANTOS</h1>
-  <p>Desafío Juvenil 2026</p>
+
+
+  <!-- =========================
+       PORTADA
+  ========================== -->
+
+  <section class="hero">
+
+    <p class="event-name">
+      Desafío Juvenil 2026
+    </p>
+
+
+    <img
+      src="logoigle3.jpeg"
+      alt="Sed Santos"
+      class="logo"
+    >
+
+
+    <p class="date">
+      24 · 25 · 26 SEPTIEMBRE
+    </p>
+
+
+    <p class="verse">
+
+      “Queridos amigos, dado que tenemos estas promesas,
+      limpiémonos de todo lo que pueda contaminar nuestro
+      cuerpo o espíritu. Y procuremos alcanzar una completa
+      santidad porque tememos a Dios.”
+
+    </p>
+
+
+    <p class="verse-reference">
+      2 CORINTIOS 7:1 · NTV
+    </p>
+
+
+    <a href="#informacion" class="button">
+      Conocer más
+    </a>
+
+
+    <a href="#informacion" class="arrow">
+      ↓
+    </a>
+
+  </section>
+
+
+
+  <!-- =========================
+       INTRODUCCIÓN
+  ========================== -->
+
+  <section class="intro" id="informacion">
+
+    <div class="intro-content">
+
+      <p class="intro-small">
+        Desafío Juvenil 2026
+      </p>
+
+
+      <h2>
+        Sed Santos
+      </h2>
+
+
+      <p>
+        Muy pronto vas a encontrar aquí toda la información
+        de esta nueva edición de Desafío Juvenil.
+      </p>
+
+    </div>
+
+  </section>
+
+
 </body>
+
 </html>
