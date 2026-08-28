@@ -9,10 +9,6 @@
 
   <style>
 
-    /* =========================
-       CONFIGURACIÓN GENERAL
-    ========================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -30,187 +26,114 @@
       overflow-x: hidden;
     }
 
-
-    /* =========================
-       PORTADA
-    ========================= */
+    /* PORTADA */
 
     .hero {
       min-height: 100vh;
       background: #0d0d0d;
-
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
       text-align: center;
-
       padding: 24px 20px 70px;
-
       position: relative;
       overflow: hidden;
     }
 
-
-    /* Resplandor rojo del fondo */
-
     .hero::before {
       content: "";
-
       position: absolute;
-
       width: 450px;
       height: 450px;
-
       background: #ed1c24;
-
       border-radius: 50%;
-
       filter: blur(150px);
-
       opacity: 0.15;
-
       top: 50%;
       left: 50%;
-
       transform: translate(-50%, -50%);
     }
-
 
     .event-name {
       position: relative;
       z-index: 2;
-
       font-size: 14px;
       font-weight: 600;
-
       letter-spacing: 6px;
-
       text-transform: uppercase;
-
       margin-bottom: 12px;
     }
-
-
-    /* Logo principal */
 
     .logo {
       position: relative;
       z-index: 2;
-
       width: min(360px, 72vw);
-
       height: auto;
-
       display: block;
     }
-
-
-    /* Fecha */
 
     .date {
       position: relative;
       z-index: 2;
-
       margin-top: 10px;
-
       font-size: 20px;
       font-weight: 700;
-
       letter-spacing: 4px;
     }
-
-
-    /* Versículo */
 
     .verse {
       position: relative;
       z-index: 2;
-
       max-width: 680px;
-
       margin: 18px auto 0;
-
       font-size: 16px;
-
       line-height: 1.7;
-
       color: #d5d5d5;
     }
-
 
     .verse-reference {
       position: relative;
       z-index: 2;
-
       margin-top: 10px;
-
       font-size: 14px;
       font-weight: bold;
-
       letter-spacing: 2px;
-
       color: white;
     }
-
-
-    /* Botón */
 
     .button {
       position: relative;
       z-index: 2;
-
       display: inline-block;
-
       margin-top: 22px;
-
       padding: 15px 32px;
-
       background: #ed1c24;
-
       color: white;
-
       text-decoration: none;
-
       text-transform: uppercase;
-
       letter-spacing: 2px;
-
       font-size: 12px;
       font-weight: bold;
-
       transition: 0.3s;
     }
-
 
     .button:hover {
       background: white;
       color: #0d0d0d;
     }
 
-
-    /* Flecha */
-
     .arrow {
       position: absolute;
-
       bottom: 20px;
-
       z-index: 2;
-
       color: white;
-
       text-decoration: none;
-
       font-size: 26px;
-
       animation: bajar 1.5s infinite;
     }
 
-
     @keyframes bajar {
-
       0%, 100% {
         transform: translateY(0);
       }
@@ -218,177 +141,246 @@
       50% {
         transform: translateY(8px);
       }
-
     }
 
-
-    /* =========================
-       ¿QUÉ ES DESAFÍO JUVENIL?
-    ========================= */
+    /* QUÉ ES */
 
     .intro {
       min-height: 100vh;
-
       background: #ed1c24;
-
       color: white;
-
       display: flex;
-
       justify-content: center;
       align-items: center;
-
       text-align: center;
-
       padding: 100px 25px;
     }
-
 
     .intro-content {
       max-width: 850px;
     }
 
-
     .intro-small {
       font-size: 13px;
-
       letter-spacing: 5px;
-
       text-transform: uppercase;
-
       margin-bottom: 20px;
     }
 
-
     .intro h2 {
       font-size: clamp(50px, 9vw, 100px);
-
       line-height: 0.9;
-
       text-transform: uppercase;
-
       margin-bottom: 35px;
     }
 
-
     .intro p {
       font-size: 18px;
-
       line-height: 1.8;
-
       max-width: 760px;
-
       margin: auto;
     }
 
-
-    /* =========================
-       PROPÓSITO
-    ========================= */
+    /* PROPÓSITO */
 
     .proposito {
       background: #0d0d0d;
-
       color: white;
-
       padding: 120px 30px;
-
       display: flex;
-
       justify-content: center;
     }
 
-
     .proposito-content {
       width: 100%;
-
       max-width: 1100px;
     }
 
-
     .section-label {
       color: #ed1c24;
-
       font-size: 12px;
-
       font-weight: bold;
-
       letter-spacing: 5px;
-
       margin-bottom: 25px;
     }
 
-
-    .proposito h2 {
+    .proposito h2,
+    .cuando h2,
+    .oradores h2 {
       font-size: clamp(55px, 9vw, 110px);
-
       line-height: 0.85;
-
       text-transform: uppercase;
-
       margin-bottom: 45px;
     }
 
-
     .proposito-text {
       max-width: 720px;
-
       color: #cfcfcf;
-
       font-size: 18px;
-
       line-height: 1.8;
-
       margin-bottom: 70px;
     }
 
-
     .proposito-grid {
       display: grid;
-
       grid-template-columns: repeat(3, 1fr);
-
       border-top: 1px solid #333;
-
       border-bottom: 1px solid #333;
     }
 
-
     .proposito-item {
       padding: 40px 25px;
-
       border-right: 1px solid #333;
     }
-
 
     .proposito-item:last-child {
       border-right: none;
     }
 
-
     .proposito-item span {
       display: block;
-
       color: #ed1c24;
-
       font-size: 12px;
-
       letter-spacing: 2px;
-
       margin-bottom: 20px;
     }
 
-
     .proposito-item h3 {
       font-size: clamp(25px, 4vw, 45px);
-
       letter-spacing: 2px;
     }
 
+    /* CUÁNDO */
 
-    /* =========================
-       CELULAR
-    ========================= */
+    .cuando {
+      background: #ed1c24;
+      color: white;
+      padding: 110px 30px;
+      text-align: center;
+    }
+
+    .cuando-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .cuando .section-label {
+      color: white;
+    }
+
+    .dias-evento {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: 50px;
+      border-top: 1px solid rgba(255,255,255,0.35);
+      border-bottom: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .dia {
+      padding: 35px 20px;
+      border-right: 1px solid rgba(255,255,255,0.35);
+    }
+
+    .dia:last-child {
+      border-right: none;
+    }
+
+    .dia small {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .dia strong {
+      display: block;
+      font-size: 34px;
+    }
+
+    .dia span {
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .countdown-title {
+      margin-top: 70px;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 800px;
+      margin: 30px auto 0;
+    }
+
+    .count-item {
+      padding: 20px;
+    }
+
+    .count-number {
+      display: block;
+      font-size: clamp(38px, 6vw, 70px);
+      font-weight: 800;
+    }
+
+    .count-label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-top: 5px;
+      text-transform: uppercase;
+    }
+
+    /* ORADORES */
+
+    .oradores {
+      background: #0d0d0d;
+      padding: 120px 30px;
+    }
+
+    .oradores-content {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .oradores-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .orador {
+      border-top: 1px solid #333;
+      padding-top: 30px;
+    }
+
+    .orador-numero {
+      color: #ed1c24;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 25px;
+    }
+
+    .orador h3 {
+      font-size: clamp(30px, 4vw, 50px);
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 15px;
+    }
+
+    .orador p {
+      color: #cfcfcf;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* CELULAR */
 
     @media (max-width: 600px) {
 
@@ -396,124 +388,92 @@
         padding: 30px 20px 70px;
       }
 
-
       .event-name {
         font-size: 11px;
-
         letter-spacing: 3px;
-
         margin-bottom: 10px;
       }
 
-
       .logo {
         width: 82vw;
-
         max-width: 340px;
       }
 
-
       .date {
         font-size: 15px;
-
         letter-spacing: 2px;
-
         margin-top: 8px;
       }
 
-
       .verse {
         font-size: 14px;
-
         line-height: 1.6;
-
         margin-top: 16px;
       }
-
 
       .verse-reference {
         font-size: 12px;
       }
 
-
-      .button {
-        padding: 14px 25px;
-
-        font-size: 11px;
-      }
-
-
-      /* INTRO */
-
       .intro {
         min-height: auto;
-
         padding: 90px 22px;
       }
 
-
-      .intro h2 {
-        font-size: 52px;
-
-        margin-bottom: 28px;
+      .intro h2,
+      .proposito h2,
+      .cuando h2,
+      .oradores h2 {
+        font-size: 50px;
       }
 
-
-      .intro p {
+      .intro p,
+      .proposito-text {
         font-size: 16px;
       }
-
-
-      /* PROPÓSITO */
 
       .proposito {
         padding: 80px 22px;
       }
 
-
-      .proposito h2 {
-        font-size: 52px;
-      }
-
-
-      .proposito-text {
-        font-size: 16px;
-
-        margin-bottom: 45px;
-      }
-
-
       .proposito-grid {
         grid-template-columns: 1fr;
       }
 
-
       .proposito-item {
         border-right: none;
-
         border-bottom: 1px solid #333;
-
         padding: 30px 5px;
       }
 
-
-      .proposito-item:last-child {
-        border-bottom: none;
+      .dias-evento {
+        grid-template-columns: 1fr;
       }
 
+      .dia {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.35);
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .oradores {
+        padding: 80px 22px;
+      }
+
+      .oradores-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
   </style>
-
 </head>
-
 
 <body>
 
-
-  <!-- =========================
-       PORTADA
-  ========================== -->
+  <!-- PORTADA -->
 
   <section class="hero">
 
@@ -521,18 +481,15 @@
       Desafío Juvenil 2026
     </p>
 
-
     <img
       src="logo-sed-santos.png"
       alt="Sed Santos"
       class="logo"
     >
 
-
     <p class="date">
       24 · 25 · 26 SEPTIEMBRE
     </p>
-
 
     <p class="verse">
       “Queridos amigos, dado que tenemos estas promesas,
@@ -540,16 +497,13 @@
       Y procuremos alcanzar una completa santidad porque tememos a Dios.”
     </p>
 
-
     <p class="verse-reference">
       2 CORINTIOS 7:1 · NTV
     </p>
 
-
     <a href="#que-es" class="button">
       Conocer más
     </a>
-
 
     <a href="#que-es" class="arrow">
       ↓
@@ -558,10 +512,7 @@
   </section>
 
 
-
-  <!-- =========================
-       ¿QUÉ ES DESAFÍO JUVENIL?
-  ========================== -->
+  <!-- QUÉ ES -->
 
   <section class="intro" id="que-es">
 
@@ -571,11 +522,9 @@
         ¿QUÉ ES?
       </p>
 
-
       <h2>
         DESAFÍO<br>JUVENIL
       </h2>
-
 
       <p>
         Desafío Juvenil es un evento de tres días dedicado a conocer
@@ -588,10 +537,7 @@
   </section>
 
 
-
-  <!-- =========================
-       PROPÓSITO
-  ========================== -->
+  <!-- PROPÓSITO -->
 
   <section class="proposito" id="proposito">
 
@@ -601,11 +547,9 @@
         DESAFÍO JUVENIL 2026
       </p>
 
-
       <h2>
         NUESTRO<br>PROPÓSITO
       </h2>
-
 
       <p class="proposito-text">
         Desafío Juvenil busca que cada joven sea confrontado,
@@ -614,44 +558,22 @@
         una fe que abarque cada área de su vida.
       </p>
 
-
       <div class="proposito-grid">
 
-
         <div class="proposito-item">
-
           <span>01</span>
-
-          <h3>
-            ESPÍRITU
-          </h3>
-
+          <h3>ESPÍRITU</h3>
         </div>
 
-
-
         <div class="proposito-item">
-
           <span>02</span>
-
-          <h3>
-            ALMA
-          </h3>
-
+          <h3>ALMA</h3>
         </div>
-
-
 
         <div class="proposito-item">
-
           <span>03</span>
-
-          <h3>
-            CUERPO
-          </h3>
-
+          <h3>CUERPO</h3>
         </div>
-
 
       </div>
 
@@ -659,6 +581,181 @@
 
   </section>
 
+
+  <!-- CUÁNDO -->
+
+  <section class="cuando" id="cuando">
+
+    <div class="cuando-content">
+
+      <p class="section-label">
+        ¿CUÁNDO?
+      </p>
+
+      <h2>
+        24 · 25 · 26<br>SEPTIEMBRE
+      </h2>
+
+      <div class="dias-evento">
+
+        <div class="dia">
+          <small>JUEVES</small>
+          <strong>24</strong>
+          <span>19:00 hs</span>
+        </div>
+
+        <div class="dia">
+          <small>VIERNES</small>
+          <strong>25</strong>
+          <span>19:00 hs</span>
+        </div>
+
+        <div class="dia">
+          <small>SÁBADO</small>
+          <strong>26</strong>
+          <span>19:00 hs</span>
+        </div>
+
+      </div>
+
+      <p class="countdown-title">
+        Faltan
+      </p>
+
+      <div class="countdown">
+
+        <div class="count-item">
+          <span class="count-number" id="days">00</span>
+          <span class="count-label">Días</span>
+        </div>
+
+        <div class="count-item">
+          <span class="count-number" id="hours">00</span>
+          <span class="count-label">Horas</span>
+        </div>
+
+        <div class="count-item">
+          <span class="count-number" id="minutes">00</span>
+          <span class="count-label">Minutos</span>
+        </div>
+
+        <div class="count-item">
+          <span class="count-number" id="seconds">00</span>
+          <span class="count-label">Segundos</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ORADORES -->
+
+  <section class="oradores" id="oradores">
+
+    <div class="oradores-content">
+
+      <p class="section-label">
+        ORADORES
+      </p>
+
+      <h2>
+        NUESTROS<br>INVITADOS
+      </h2>
+
+      <div class="oradores-grid">
+
+        <div class="orador">
+
+          <p class="orador-numero">01</p>
+
+          <h3>
+            Ps. Arsenio<br>Ramírez
+          </h3>
+
+          <p>
+            Casa de Oración Guadalajara<br>
+            México
+          </p>
+
+        </div>
+
+        <div class="orador">
+
+          <p class="orador-numero">02</p>
+
+          <h3>
+            Ps. Mónica<br>Ramírez
+          </h3>
+
+          <p>
+            Casa de Oración México<br>
+            México
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <script>
+
+    const eventDate = new Date("2026-09-24T19:00:00-03:00");
+
+    function updateCountdown() {
+
+      const now = new Date();
+      const difference = eventDate - now;
+
+      if (difference <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+      const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+      );
+
+      const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+      );
+
+      const seconds = Math.floor(
+        (difference / 1000) % 60
+      );
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+  </script>
 
 </body>
 
