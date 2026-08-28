@@ -9,6 +9,10 @@
 
   <style>
 
+    /* =========================
+       CONFIGURACIÓN GENERAL
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -23,6 +27,7 @@
       font-family: Arial, Helvetica, sans-serif;
       background: #0d0d0d;
       color: white;
+      overflow-x: hidden;
     }
 
 
@@ -40,14 +45,15 @@
       align-items: center;
 
       text-align: center;
-      padding: 40px 20px;
+
+      padding: 24px 20px 70px;
 
       position: relative;
       overflow: hidden;
     }
 
 
-    /* Resplandor rojo detrás del logo */
+    /* Resplandor rojo del fondo */
 
     .hero::before {
       content: "";
@@ -60,6 +66,7 @@
       background: #ed1c24;
 
       border-radius: 50%;
+
       filter: blur(150px);
 
       opacity: 0.15;
@@ -79,26 +86,28 @@
       font-weight: 600;
 
       letter-spacing: 6px;
+
       text-transform: uppercase;
 
       margin-bottom: 12px;
     }
 
 
-    /* LOGO */
+    /* Logo principal */
 
-   .logo {
-  position: relative;
-  z-index: 2;
+    .logo {
+      position: relative;
+      z-index: 2;
 
-  width: min(360px, 72vw);
-  height: auto;
+      width: min(360px, 72vw);
 
-  display: block;
-}
+      height: auto;
+
+      display: block;
+    }
 
 
-    /* FECHA */
+    /* Fecha */
 
     .date {
       position: relative;
@@ -113,7 +122,7 @@
     }
 
 
-    /* VERSÍCULO */
+    /* Versículo */
 
     .verse {
       position: relative;
@@ -124,6 +133,7 @@
       margin: 18px auto 0;
 
       font-size: 16px;
+
       line-height: 1.7;
 
       color: #d5d5d5;
@@ -145,7 +155,7 @@
     }
 
 
-    /* BOTÓN */
+    /* Botón */
 
     .button {
       position: relative;
@@ -176,11 +186,11 @@
 
     .button:hover {
       background: white;
-      color: #111111;
+      color: #0d0d0d;
     }
 
 
-    /* FLECHITA */
+    /* Flecha */
 
     .arrow {
       position: absolute;
@@ -213,7 +223,7 @@
 
 
     /* =========================
-       SEGUNDA SECCIÓN
+       ¿QUÉ ES DESAFÍO JUVENIL?
     ========================= */
 
     .intro {
@@ -221,13 +231,16 @@
 
       background: #ed1c24;
 
+      color: white;
+
       display: flex;
+
       justify-content: center;
       align-items: center;
 
       text-align: center;
 
-      padding: 90px 25px;
+      padding: 100px 25px;
     }
 
 
@@ -248,11 +261,11 @@
 
 
     .intro h2 {
-      font-size: clamp(48px, 9vw, 100px);
-
-      text-transform: uppercase;
+      font-size: clamp(50px, 9vw, 100px);
 
       line-height: 0.9;
+
+      text-transform: uppercase;
 
       margin-bottom: 35px;
     }
@@ -262,6 +275,114 @@
       font-size: 18px;
 
       line-height: 1.8;
+
+      max-width: 760px;
+
+      margin: auto;
+    }
+
+
+    /* =========================
+       PROPÓSITO
+    ========================= */
+
+    .proposito {
+      background: #0d0d0d;
+
+      color: white;
+
+      padding: 120px 30px;
+
+      display: flex;
+
+      justify-content: center;
+    }
+
+
+    .proposito-content {
+      width: 100%;
+
+      max-width: 1100px;
+    }
+
+
+    .section-label {
+      color: #ed1c24;
+
+      font-size: 12px;
+
+      font-weight: bold;
+
+      letter-spacing: 5px;
+
+      margin-bottom: 25px;
+    }
+
+
+    .proposito h2 {
+      font-size: clamp(55px, 9vw, 110px);
+
+      line-height: 0.85;
+
+      text-transform: uppercase;
+
+      margin-bottom: 45px;
+    }
+
+
+    .proposito-text {
+      max-width: 720px;
+
+      color: #cfcfcf;
+
+      font-size: 18px;
+
+      line-height: 1.8;
+
+      margin-bottom: 70px;
+    }
+
+
+    .proposito-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      border-top: 1px solid #333;
+
+      border-bottom: 1px solid #333;
+    }
+
+
+    .proposito-item {
+      padding: 40px 25px;
+
+      border-right: 1px solid #333;
+    }
+
+
+    .proposito-item:last-child {
+      border-right: none;
+    }
+
+
+    .proposito-item span {
+      display: block;
+
+      color: #ed1c24;
+
+      font-size: 12px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 20px;
+    }
+
+
+    .proposito-item h3 {
+      font-size: clamp(25px, 4vw, 45px);
+
+      letter-spacing: 2px;
     }
 
 
@@ -272,44 +393,112 @@
     @media (max-width: 600px) {
 
       .hero {
-        padding: 24px 20px 70px;
+        padding: 30px 20px 70px;
       }
+
 
       .event-name {
         font-size: 11px;
+
         letter-spacing: 3px;
-        margin-bottom: 18px;
+
+        margin-bottom: 10px;
       }
 
+
       .logo {
-        width: 88vw;
-        max-width: 390px;
+        width: 82vw;
+
+        max-width: 340px;
       }
+
 
       .date {
         font-size: 15px;
+
         letter-spacing: 2px;
+
+        margin-top: 8px;
       }
+
 
       .verse {
         font-size: 14px;
+
         line-height: 1.6;
+
+        margin-top: 16px;
       }
+
 
       .verse-reference {
         font-size: 12px;
       }
 
+
       .button {
         padding: 14px 25px;
+
+        font-size: 11px;
       }
 
-      .intro h2 {
-        font-size: 55px;
+
+      /* INTRO */
+
+      .intro {
+        min-height: auto;
+
+        padding: 90px 22px;
       }
+
+
+      .intro h2 {
+        font-size: 52px;
+
+        margin-bottom: 28px;
+      }
+
 
       .intro p {
         font-size: 16px;
+      }
+
+
+      /* PROPÓSITO */
+
+      .proposito {
+        padding: 80px 22px;
+      }
+
+
+      .proposito h2 {
+        font-size: 52px;
+      }
+
+
+      .proposito-text {
+        font-size: 16px;
+
+        margin-bottom: 45px;
+      }
+
+
+      .proposito-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .proposito-item {
+        border-right: none;
+
+        border-bottom: 1px solid #333;
+
+        padding: 30px 5px;
+      }
+
+
+      .proposito-item:last-child {
+        border-bottom: none;
       }
 
     }
@@ -334,10 +523,10 @@
 
 
     <img
-  src="logo-sed-santos.png"
-  alt="Sed Santos"
-  class="logo"
->
+      src="logo-sed-santos.png"
+      alt="Sed Santos"
+      class="logo"
+    >
 
 
     <p class="date">
@@ -346,12 +535,9 @@
 
 
     <p class="verse">
-
       “Queridos amigos, dado que tenemos estas promesas,
-      limpiémonos de todo lo que pueda contaminar nuestro
-      cuerpo o espíritu. Y procuremos alcanzar una completa
-      santidad porque tememos a Dios.”
-
+      limpiémonos de todo lo que pueda contaminar nuestro cuerpo o espíritu.
+      Y procuremos alcanzar una completa santidad porque tememos a Dios.”
     </p>
 
 
@@ -360,12 +546,12 @@
     </p>
 
 
-    <a href="#informacion" class="button">
+    <a href="#que-es" class="button">
       Conocer más
     </a>
 
 
-    <a href="#informacion" class="arrow">
+    <a href="#que-es" class="arrow">
       ↓
     </a>
 
@@ -374,27 +560,100 @@
 
 
   <!-- =========================
-       INTRODUCCIÓN
+       ¿QUÉ ES DESAFÍO JUVENIL?
   ========================== -->
 
-  <section class="intro" id="informacion">
+  <section class="intro" id="que-es">
 
     <div class="intro-content">
 
       <p class="intro-small">
-        Desafío Juvenil 2026
+        ¿QUÉ ES?
       </p>
 
 
       <h2>
-        Sed Santos
+        DESAFÍO<br>JUVENIL
       </h2>
 
 
       <p>
-        Muy pronto vas a encontrar aquí toda la información
-        de esta nueva edición de Desafío Juvenil.
+        Desafío Juvenil es un evento de tres días dedicado a conocer
+        la Palabra de Dios por medio de conferencias y talleres,
+        además de disfrutar tiempos de alabanza y comunión.
       </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       PROPÓSITO
+  ========================== -->
+
+  <section class="proposito" id="proposito">
+
+    <div class="proposito-content">
+
+      <p class="section-label">
+        DESAFÍO JUVENIL 2026
+      </p>
+
+
+      <h2>
+        NUESTRO<br>PROPÓSITO
+      </h2>
+
+
+      <p class="proposito-text">
+        Desafío Juvenil busca que cada joven sea confrontado,
+        edificado y transformado por medio de la Palabra de Dios,
+        creciendo en una relación genuina con Cristo y viviendo
+        una fe que abarque cada área de su vida.
+      </p>
+
+
+      <div class="proposito-grid">
+
+
+        <div class="proposito-item">
+
+          <span>01</span>
+
+          <h3>
+            ESPÍRITU
+          </h3>
+
+        </div>
+
+
+
+        <div class="proposito-item">
+
+          <span>02</span>
+
+          <h3>
+            ALMA
+          </h3>
+
+        </div>
+
+
+
+        <div class="proposito-item">
+
+          <span>03</span>
+
+          <h3>
+            CUERPO
+          </h3>
+
+        </div>
+
+
+      </div>
 
     </div>
 
