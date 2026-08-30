@@ -1,762 +1,1594 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Desafío Juvenil 2026 | Sed Santos</title>
 
+  <meta name="description"
+        content="Desafío Juvenil 2026 - Sed Santos. Casa de Oración Ciudad del Este, Paraguay. 24 al 27 de septiembre de 2026.">
+
+  <!-- FUENTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ICONOS -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    /* =====================================================
+       CONFIGURACIÓN GENERAL
+    ===================================================== */
+
+    :root{
+      --rojo:#ed171f;
+      --rojo-oscuro:#a80f17;
+      --rojo-profundo:#78090f;
+      --negro:#050505;
+      --negro-suave:#0c0c0c;
+      --blanco:#ffffff;
+      --gris:#d8d8d8;
     }
 
-    html {
-      scroll-behavior: smooth;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0d0d0d;
-      color: white;
-      overflow-x: hidden;
+    html{
+      scroll-behavior:smooth;
     }
 
-    /* PORTADA */
-
-    .hero {
-      min-height: 100vh;
-      background: #0d0d0d;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 24px 20px 70px;
-      position: relative;
-      overflow: hidden;
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:var(--negro);
+      color:var(--blanco);
+      overflow-x:hidden;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      background: #ed1c24;
-      border-radius: 50%;
-      filter: blur(150px);
-      opacity: 0.15;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+    img{
+      max-width:100%;
+      display:block;
     }
 
-    .event-name {
-      position: relative;
-      z-index: 2;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 6px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
-    .logo {
-      position: relative;
-      z-index: 2;
-      width: min(360px, 72vw);
-      height: auto;
-      display: block;
+    section{
+      position:relative;
     }
 
-    .date {
-      position: relative;
-      z-index: 2;
-      margin-top: 10px;
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 4px;
+    .container{
+      width:min(1180px,90%);
+      margin:auto;
     }
 
-    .verse {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-      margin: 18px auto 0;
-      font-size: 16px;
-      line-height: 1.7;
-      color: #d5d5d5;
+    .titulo-seccion{
+      font-family:'Anton',sans-serif;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      font-size:clamp(2.8rem,7vw,6.5rem);
+      line-height:.95;
+      text-align:center;
     }
 
-    .verse-reference {
-      position: relative;
-      z-index: 2;
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: white;
+    .subrayado{
+      width:70px;
+      height:4px;
+      background:var(--blanco);
+      margin:25px auto 35px;
     }
 
-    .button {
-      position: relative;
-      z-index: 2;
-      display: inline-block;
-      margin-top: 22px;
-      padding: 15px 32px;
-      background: #ed1c24;
-      color: white;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: bold;
-      transition: 0.3s;
+    /* =====================================================
+       NAVEGACIÓN
+    ===================================================== */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(0,0,0,.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
 
-    .button:hover {
-      background: white;
-      color: #0d0d0d;
+    .nav-container{
+      width:min(1250px,92%);
+      height:76px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
 
-    .arrow {
-      position: absolute;
-      bottom: 20px;
-      z-index: 2;
-      color: white;
-      text-decoration: none;
-      font-size: 26px;
-      animation: bajar 1.5s infinite;
+    .nav-logo img{
+      width:100px;
+      max-height:60px;
+      object-fit:contain;
     }
 
-    @keyframes bajar {
-      0%, 100% {
-        transform: translateY(0);
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:25px;
+      list-style:none;
+      font-size:.76rem;
+      text-transform:uppercase;
+      letter-spacing:1.5px;
+      font-weight:700;
+    }
+
+    .nav-links a{
+      transition:.25s;
+    }
+
+    .nav-links a:hover{
+      color:var(--rojo);
+    }
+
+    .menu-btn{
+      display:none;
+      border:none;
+      background:none;
+      color:white;
+      font-size:1.6rem;
+      cursor:pointer;
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero{
+      min-height:100vh;
+      padding:125px 20px 80px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+
+      background:
+        radial-gradient(circle at 50% 40%,
+        rgba(237,23,31,.28),
+        transparent 35%),
+        linear-gradient(180deg,#050505 0%,#080808 100%);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:700px;
+      height:700px;
+      border:1px solid rgba(237,23,31,.16);
+      border-radius:50%;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:1000px;
+    }
+
+    .hero-eyebrow{
+      font-size:.78rem;
+      letter-spacing:5px;
+      font-weight:700;
+      text-transform:uppercase;
+      margin-bottom:15px;
+      color:#ddd;
+    }
+
+    .hero-logo{
+      width:min(580px,90%);
+      margin:0 auto 25px;
+      object-fit:contain;
+    }
+
+    .hero-fecha{
+      text-transform:uppercase;
+      letter-spacing:4px;
+      font-weight:800;
+      font-size:clamp(.9rem,2vw,1.2rem);
+      margin:15px 0 42px;
+    }
+
+    /* VERSÍCULO estilo fuerte */
+
+    .versiculo{
+      max-width:900px;
+      margin:auto;
+    }
+
+    .versiculo-texto{
+      font-family:'Anton',sans-serif;
+      text-transform:uppercase;
+      font-size:clamp(2rem,5vw,4.7rem);
+      line-height:1.05;
+      letter-spacing:.5px;
+    }
+
+    .versiculo-ref{
+      display:block;
+      margin-top:22px;
+      color:var(--rojo);
+      font-family:'Anton',sans-serif;
+      font-size:clamp(1.5rem,3vw,2.5rem);
+      text-transform:uppercase;
+      letter-spacing:2px;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      margin-top:45px;
+      padding:15px 35px;
+      border:2px solid white;
+      border-radius:100px;
+      text-transform:uppercase;
+      font-size:.75rem;
+      letter-spacing:2px;
+      font-weight:800;
+      transition:.3s;
+    }
+
+    .hero-btn:hover{
+      background:white;
+      color:black;
+    }
+
+    .arrow{
+      margin-top:28px;
+      font-size:1.5rem;
+      animation:bajar 1.5s infinite;
+    }
+
+    @keyframes bajar{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(10px);}
+    }
+
+    /* =====================================================
+       QUÉ ES
+    ===================================================== */
+
+    .que-es{
+      background:var(--rojo);
+      padding:120px 20px;
+    }
+
+    .que-es .texto{
+      max-width:880px;
+      margin:auto;
+      text-align:center;
+      font-size:clamp(1rem,2vw,1.22rem);
+      line-height:1.9;
+      font-weight:500;
+    }
+
+    .que-es strong{
+      font-weight:900;
+    }
+
+    /* =====================================================
+       PROPÓSITO
+    ===================================================== */
+
+    .proposito{
+      background:#050505;
+      padding:130px 20px;
+      text-align:center;
+    }
+
+    .proposito .intro{
+      max-width:850px;
+      margin:0 auto;
+      line-height:1.9;
+      color:#ddd;
+      font-size:1.05rem;
+    }
+
+    .espiritu{
+      font-family:'Anton',sans-serif;
+      font-size:clamp(3.3rem,9vw,8rem);
+      line-height:.95;
+      text-transform:uppercase;
+      margin:60px auto;
+      max-width:1150px;
+    }
+
+    .espiritu span{
+      color:var(--rojo);
+    }
+
+    .proposito-final{
+      max-width:800px;
+      margin:auto;
+      font-size:1rem;
+      line-height:1.8;
+      color:#cfcfcf;
+    }
+
+    /* =====================================================
+       CUÁNDO + CONTADOR
+    ===================================================== */
+
+    .cuando{
+      padding:120px 20px;
+      background:linear-gradient(145deg,#e5151e,#9f0d15);
+      text-align:center;
+    }
+
+    .fecha-grande{
+      font-family:'Anton',sans-serif;
+      text-transform:uppercase;
+      font-size:clamp(2.5rem,7vw,6rem);
+      line-height:1;
+      margin-top:30px;
+    }
+
+    .fecha-grande span{
+      display:block;
+    }
+
+    .faltan{
+      margin:65px 0 20px;
+      text-transform:uppercase;
+      letter-spacing:6px;
+      font-size:.8rem;
+      font-weight:700;
+    }
+
+    .contador{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .contador-box{
+      width:130px;
+      min-height:130px;
+      border:2px solid white;
+      border-radius:18px;
+      background:rgba(0,0,0,.18);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .contador-numero{
+      font-family:'Anton',sans-serif;
+      font-size:3rem;
+      line-height:1;
+    }
+
+    .contador-label{
+      font-size:.75rem;
+      margin-top:12px;
+      font-weight:700;
+    }
+
+    /* =====================================================
+       ORADORES
+    ===================================================== */
+
+    .oradores{
+      background:#f5f3ee;
+      color:#111;
+      padding:130px 20px;
+    }
+
+    .oradores .subrayado{
+      background:var(--rojo);
+    }
+
+    .oradores-grid{
+      max-width:950px;
+      margin:70px auto 0;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:100px;
+      text-align:center;
+    }
+
+    .orador-foto{
+      width:300px;
+      height:300px;
+      margin:0 auto 32px;
+      border-radius:50%;
+      object-fit:cover;
+      object-position:center top;
+      filter:grayscale(10%);
+      box-shadow:0 20px 50px rgba(0,0,0,.15);
+    }
+
+    .orador h3{
+      font-family:'Anton',sans-serif;
+      text-transform:uppercase;
+      font-size:2.2rem;
+      line-height:1;
+    }
+
+    .orador p{
+      color:#555;
+      margin-top:12px;
+      font-size:.9rem;
+      font-weight:600;
+    }
+
+    /* =====================================================
+       PROGRAMA
+    ===================================================== */
+
+    .programa{
+      background:var(--rojo);
+      padding:120px 20px;
+    }
+
+    .programa .titulo-seccion{
+      text-align:left;
+      font-size:clamp(4rem,10vw,9rem);
+    }
+
+    .programa-sub{
+      font-family:'Anton',sans-serif;
+      font-size:clamp(2rem,5vw,4rem);
+      text-transform:uppercase;
+      margin-bottom:50px;
+    }
+
+    .programa-panel{
+      background:rgba(105,0,7,.38);
+      border:2px solid rgba(255,255,255,.65);
+      border-radius:35px;
+      padding:55px 65px;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .programa-item{
+      padding:28px 0;
+      border-bottom:1px solid rgba(255,255,255,.25);
+    }
+
+    .programa-item:last-child{
+      border-bottom:none;
+    }
+
+    .programa-item h3{
+      font-family:'Anton',sans-serif;
+      font-size:clamp(1.8rem,4vw,3.6rem);
+      font-weight:400;
+      letter-spacing:.5px;
+    }
+
+    .programa-item p{
+      margin-top:8px;
+      font-size:.78rem;
+      letter-spacing:3px;
+      text-transform:uppercase;
+    }
+
+    /* =====================================================
+       UBICACIÓN
+    ===================================================== */
+
+    .ubicacion{
+      background:#f5f3ee;
+      color:#111;
+      padding:120px 20px;
+      text-align:center;
+    }
+
+    .ubicacion .subrayado{
+      background:var(--rojo);
+    }
+
+    .direccion{
+      max-width:750px;
+      margin:0 auto 45px;
+      font-size:1.05rem;
+      line-height:1.7;
+      font-weight:600;
+    }
+
+    .mapa{
+      max-width:1150px;
+      margin:auto;
+      overflow:hidden;
+      border-radius:28px;
+      box-shadow:0 20px 50px rgba(0,0,0,.16);
+    }
+
+    .mapa iframe{
+      display:block;
+      width:100%;
+      height:520px;
+      border:0;
+    }
+
+    .maps-btn{
+      display:inline-block;
+      margin-top:35px;
+      background:var(--rojo);
+      color:white;
+      padding:16px 30px;
+      border-radius:100px;
+      text-transform:uppercase;
+      font-size:.75rem;
+      letter-spacing:2px;
+      font-weight:800;
+    }
+
+    /* =====================================================
+       HOTELES
+    ===================================================== */
+
+    .hoteles{
+      padding:130px 20px;
+      background:#090909;
+    }
+
+    .importante{
+      max-width:850px;
+      margin:45px auto 80px;
+      text-align:center;
+      color:#cfcfcf;
+      font-size:.88rem;
+      line-height:1.8;
+    }
+
+    .importante strong{
+      color:var(--rojo);
+      display:block;
+      font-size:1rem;
+      letter-spacing:3px;
+      margin-bottom:12px;
+    }
+
+    .hotel{
+      max-width:1050px;
+      margin:0 auto 90px;
+      display:grid;
+      grid-template-columns:1.25fr .75fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .hotel:nth-of-type(even){
+      grid-template-columns:.75fr 1.25fr;
+    }
+
+    .hotel:nth-of-type(even) .hotel-img{
+      order:2;
+    }
+
+    .hotel-img img{
+      width:100%;
+      height:430px;
+      object-fit:cover;
+      border-radius:25px;
+    }
+
+    .hotel-info h3{
+      font-family:'Anton',sans-serif;
+      text-transform:uppercase;
+      font-size:clamp(2rem,4vw,3.5rem);
+      line-height:1;
+      margin-bottom:22px;
+    }
+
+    .hotel-info p{
+      color:#cfcfcf;
+      margin:9px 0;
+      line-height:1.6;
+      font-size:.9rem;
+    }
+
+    .hotel-info i{
+      color:var(--rojo);
+      width:24px;
+    }
+
+    .hotel-links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:25px;
+    }
+
+    .hotel-btn{
+      display:inline-block;
+      border:1px solid white;
+      border-radius:100px;
+      padding:12px 20px;
+      text-transform:uppercase;
+      font-size:.68rem;
+      letter-spacing:1.5px;
+      font-weight:800;
+      transition:.3s;
+    }
+
+    .hotel-btn:hover{
+      background:var(--rojo);
+      border-color:var(--rojo);
+    }
+
+    /* =====================================================
+       CIERRE
+    ===================================================== */
+
+    .cierre{
+      min-height:720px;
+      padding:110px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+
+      background:
+        linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.88)),
+        url("iglesia-juvenil-grupo.jpeg");
+
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+    }
+
+    .cierre-content{
+      max-width:900px;
+    }
+
+    .cierre h2{
+      font-family:'Anton',sans-serif;
+      font-size:clamp(2.8rem,7vw,6rem);
+      line-height:1;
+      text-transform:uppercase;
+    }
+
+    .cierre-linea{
+      width:100px;
+      height:1px;
+      background:white;
+      margin:30px auto;
+    }
+
+    .cierre-texto{
+      font-size:clamp(1rem,2.5vw,1.5rem);
+      line-height:1.7;
+      letter-spacing:1px;
+    }
+
+    .cierre-fecha{
+      font-family:'Anton',sans-serif;
+      font-size:clamp(2rem,5vw,4rem);
+      margin:30px 0;
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer{
+      background:var(--rojo);
+      text-align:center;
+      padding:80px 20px 45px;
+    }
+
+    .footer-logo{
+      width:135px;
+      margin:0 auto 25px;
+    }
+
+    footer h2{
+      font-size:clamp(3rem,7vw,5.5rem);
+      line-height:.85;
+      font-weight:900;
+      letter-spacing:-4px;
+    }
+
+    .sociales{
+      display:flex;
+      justify-content:center;
+      gap:28px;
+      margin:38px 0 50px;
+    }
+
+    .sociales a{
+      width:48px;
+      height:48px;
+      border:1px solid rgba(255,255,255,.65);
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.2rem;
+      transition:.3s;
+    }
+
+    .sociales a:hover{
+      background:white;
+      color:var(--rojo);
+      transform:translateY(-4px);
+    }
+
+    .copyright{
+      font-size:.67rem;
+      letter-spacing:4px;
+      text-transform:uppercase;
+      line-height:1.8;
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media(max-width:850px){
+
+      .menu-btn{
+        display:block;
       }
 
-      50% {
-        transform: translateY(8px);
+      .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        background:#050505;
+        flex-direction:column;
+        padding:30px;
+        display:none;
+      }
+
+      .nav-links.activo{
+        display:flex;
+      }
+
+      .oradores-grid{
+        grid-template-columns:1fr;
+        gap:80px;
+      }
+
+      .hotel,
+      .hotel:nth-of-type(even){
+        grid-template-columns:1fr;
+      }
+
+      .hotel:nth-of-type(even) .hotel-img{
+        order:0;
+      }
+
+      .programa-panel{
+        padding:35px 25px;
+      }
+
+      .mapa iframe{
+        height:400px;
+      }
+
+      .cierre{
+        background-attachment:scroll;
       }
     }
 
-    /* QUÉ ES */
+    @media(max-width:550px){
 
-    .intro {
-      min-height: 100vh;
-      background: #ed1c24;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 100px 25px;
-    }
-
-    .intro-content {
-      max-width: 850px;
-    }
-
-    .intro-small {
-      font-size: 13px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .intro h2 {
-      font-size: clamp(50px, 9vw, 100px);
-      line-height: 0.9;
-      text-transform: uppercase;
-      margin-bottom: 35px;
-    }
-
-    .intro p {
-      font-size: 18px;
-      line-height: 1.8;
-      max-width: 760px;
-      margin: auto;
-    }
-
-    /* PROPÓSITO */
-
-    .proposito {
-      background: #0d0d0d;
-      color: white;
-      padding: 120px 30px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .proposito-content {
-      width: 100%;
-      max-width: 1100px;
-    }
-
-    .section-label {
-      color: #ed1c24;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 5px;
-      margin-bottom: 25px;
-    }
-
-    .proposito h2,
-    .cuando h2,
-    .oradores h2 {
-      font-size: clamp(55px, 9vw, 110px);
-      line-height: 0.85;
-      text-transform: uppercase;
-      margin-bottom: 45px;
-    }
-
-    .proposito-text {
-      max-width: 720px;
-      color: #cfcfcf;
-      font-size: 18px;
-      line-height: 1.8;
-      margin-bottom: 70px;
-    }
-
-    .proposito-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top: 1px solid #333;
-      border-bottom: 1px solid #333;
-    }
-
-    .proposito-item {
-      padding: 40px 25px;
-      border-right: 1px solid #333;
-    }
-
-    .proposito-item:last-child {
-      border-right: none;
-    }
-
-    .proposito-item span {
-      display: block;
-      color: #ed1c24;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .proposito-item h3 {
-      font-size: clamp(25px, 4vw, 45px);
-      letter-spacing: 2px;
-    }
-
-    /* CUÁNDO */
-
-    .cuando {
-      background: #ed1c24;
-      color: white;
-      padding: 110px 30px;
-      text-align: center;
-    }
-
-    .cuando-content {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .cuando .section-label {
-      color: white;
-    }
-
-    .dias-evento {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      margin-top: 50px;
-      border-top: 1px solid rgba(255,255,255,0.35);
-      border-bottom: 1px solid rgba(255,255,255,0.35);
-    }
-
-    .dia {
-      padding: 35px 20px;
-      border-right: 1px solid rgba(255,255,255,0.35);
-    }
-
-    .dia:last-child {
-      border-right: none;
-    }
-
-    .dia small {
-      display: block;
-      font-size: 12px;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
-    }
-
-    .dia strong {
-      display: block;
-      font-size: 34px;
-    }
-
-    .dia span {
-      display: block;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    .countdown-title {
-      margin-top: 70px;
-      font-size: 13px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      max-width: 800px;
-      margin: 30px auto 0;
-    }
-
-    .count-item {
-      padding: 20px;
-    }
-
-    .count-number {
-      display: block;
-      font-size: clamp(38px, 6vw, 70px);
-      font-weight: 800;
-    }
-
-    .count-label {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-top: 5px;
-      text-transform: uppercase;
-    }
-
-    /* ORADORES */
-
-    .oradores {
-      background: #0d0d0d;
-      padding: 120px 30px;
-    }
-
-    .oradores-content {
-      width: 100%;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .oradores-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      margin-top: 60px;
-    }
-
-    .orador {
-      border-top: 1px solid #333;
-      padding-top: 30px;
-    }
-
-    .orador-numero {
-      color: #ed1c24;
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 25px;
-    }
-
-    .orador h3 {
-      font-size: clamp(30px, 4vw, 50px);
-      text-transform: uppercase;
-      line-height: 1;
-      margin-bottom: 15px;
-    }
-
-    .orador p {
-      color: #cfcfcf;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    /* CELULAR */
-
-    @media (max-width: 600px) {
-
-      .hero {
-        padding: 30px 20px 70px;
+      .hero{
+        padding-top:115px;
       }
 
-      .event-name {
-        font-size: 11px;
-        letter-spacing: 3px;
-        margin-bottom: 10px;
+      .hero-logo{
+        width:95%;
       }
 
-      .logo {
-        width: 82vw;
-        max-width: 340px;
+      .contador{
+        gap:8px;
       }
 
-      .date {
-        font-size: 15px;
-        letter-spacing: 2px;
-        margin-top: 8px;
+      .contador-box{
+        width:calc(50% - 8px);
+        max-width:145px;
+        min-height:115px;
       }
 
-      .verse {
-        font-size: 14px;
-        line-height: 1.6;
-        margin-top: 16px;
+      .contador-numero{
+        font-size:2.5rem;
       }
 
-      .verse-reference {
-        font-size: 12px;
+      .orador-foto{
+        width:240px;
+        height:240px;
       }
 
-      .intro {
-        min-height: auto;
-        padding: 90px 22px;
+      .hotel-img img{
+        height:280px;
       }
 
-      .intro h2,
-      .proposito h2,
-      .cuando h2,
-      .oradores h2 {
-        font-size: 50px;
-      }
-
-      .intro p,
-      .proposito-text {
-        font-size: 16px;
-      }
-
-      .proposito {
-        padding: 80px 22px;
-      }
-
-      .proposito-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .proposito-item {
-        border-right: none;
-        border-bottom: 1px solid #333;
-        padding: 30px 5px;
-      }
-
-      .dias-evento {
-        grid-template-columns: 1fr;
-      }
-
-      .dia {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.35);
-      }
-
-      .countdown {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .oradores {
-        padding: 80px 22px;
-      }
-
-      .oradores-grid {
-        grid-template-columns: 1fr;
+      footer h2{
+        letter-spacing:-2px;
       }
     }
 
   </style>
 </head>
 
+
 <body>
 
-  <!-- PORTADA -->
+<!-- =====================================================
+     MENÚ
+===================================================== -->
 
-  <section class="hero">
+<nav>
+  <div class="nav-container">
 
-    <p class="event-name">
-      Desafío Juvenil 2026
-    </p>
+    <a href="#inicio" class="nav-logo">
+      <img src="logo-sed-santos.png" alt="Sed Santos">
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#que-es">Desafío Juvenil</a></li>
+      <li><a href="#proposito">Propósito</a></li>
+      <li><a href="#cuando">¿Cuándo?</a></li>
+      <li><a href="#oradores">Oradores</a></li>
+      <li><a href="#programa">Programa</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="#hospedaje">Hospedaje</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="inicio">
+
+  <div class="hero-content">
+
+    <div class="hero-eyebrow">
+      Desafío Juvenil Paraguay · 2026
+    </div>
 
     <img
       src="logo-sed-santos.png"
-      alt="Sed Santos"
-      class="logo"
+      alt="Desafío Juvenil 2026 Sed Santos"
+      class="hero-logo"
     >
 
-    <p class="date">
-      24 · 25 · 26 SEPTIEMBRE
-    </p>
+    <div class="hero-fecha">
+      24 · 25 · 26 de septiembre · Ciudad del Este
+    </div>
 
-    <p class="verse">
-      “Queridos amigos, dado que tenemos estas promesas,
-      limpiémonos de todo lo que pueda contaminar nuestro cuerpo o espíritu.
-      Y procuremos alcanzar una completa santidad porque tememos a Dios.”
-    </p>
+    <div class="versiculo">
 
-    <p class="verse-reference">
-      2 CORINTIOS 7:1 · NTV
-    </p>
+      <div class="versiculo-texto">
+        “Así que, amados, puesto que tenemos tales promesas,
+        limpiémonos de toda contaminación de carne y de espíritu,
+        perfeccionando la santidad en el temor de Dios.”
+      </div>
 
-    <a href="#que-es" class="button">
+      <span class="versiculo-ref">
+        2 Corintios 7:1
+      </span>
+
+    </div>
+
+    <a href="#que-es" class="hero-btn">
       Conocer más
     </a>
 
-    <a href="#que-es" class="arrow">
-      ↓
-    </a>
+    <div class="arrow">
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- QUÉ ES -->
+<!-- =====================================================
+     ¿QUÉ ES DESAFÍO JUVENIL?
+===================================================== -->
 
-  <section class="intro" id="que-es">
+<section class="que-es" id="que-es">
 
-    <div class="intro-content">
+  <div class="container">
 
-      <p class="intro-small">
-        ¿QUÉ ES?
-      </p>
+    <h2 class="titulo-seccion">
+      ¿Qué es Desafío Juvenil?
+    </h2>
 
-      <h2>
-        DESAFÍO<br>JUVENIL
-      </h2>
+    <div class="subrayado"></div>
+
+    <div class="texto">
 
       <p>
-        Desafío Juvenil es un evento de tres días dedicado a conocer
-        la Palabra de Dios por medio de conferencias y talleres,
-        además de disfrutar tiempos de alabanza y comunión.
+        <strong>Desafío Juvenil</strong> nace del amor de Dios hacia los jóvenes.
+        Es un encuentro en el que Dios desafía a una generación a vivir
+        de una manera diferente, en medio de un mundo que constantemente
+        busca llevarla en otra dirección.
+      </p>
+
+      <br>
+
+      <p>
+        Son días para recibir la Palabra de Dios, compartir en comunión,
+        adorar juntos y ser desafiados a conocer Su voluntad y el propósito
+        que Él tiene para nuestras vidas.
+      </p>
+
+      <br>
+
+      <p>
+        Desafío Juvenil se realiza en distintas iglesias
+        <strong>Casa de Oración</strong>, uniendo a jóvenes con un mismo deseo:
+        conocer más a Dios y vivir para Él.
       </p>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- PROPÓSITO -->
+<!-- =====================================================
+     PROPÓSITO
+===================================================== -->
 
-  <section class="proposito" id="proposito">
+<section class="proposito" id="proposito">
 
-    <div class="proposito-content">
+  <div class="container">
 
-      <p class="section-label">
-        DESAFÍO JUVENIL 2026
-      </p>
+    <h2 class="titulo-seccion">
+      Nuestro propósito
+    </h2>
 
-      <h2>
-        NUESTRO<br>PROPÓSITO
-      </h2>
+    <div class="subrayado"></div>
 
-      <p class="proposito-text">
-        Desafío Juvenil busca que cada joven sea confrontado,
-        edificado y transformado por medio de la Palabra de Dios,
-        creciendo en una relación genuina con Cristo y viviendo
-        una fe que abarque cada área de su vida.
-      </p>
+    <p class="intro">
+      Abordar los desafíos y las dudas que enfrenta el joven cristiano
+      a la luz de la Palabra de Dios, reconociendo en Cristo el recurso
+      suficiente para ser fortalecidos en Su amor y formar Su carácter
+      en nuestras vidas.
+    </p>
 
-      <div class="proposito-grid">
+    <div class="espiritu">
+      Espíritu, <span>alma</span> y cuerpo
+    </div>
 
-        <div class="proposito-item">
-          <span>01</span>
-          <h3>ESPÍRITU</h3>
-        </div>
+    <p class="proposito-final">
+      Prepararnos integralmente para cumplir el propósito de Dios,
+      viviendo como Sus representantes y reflejando a Cristo
+      en cada área de nuestra vida.
+    </p>
 
-        <div class="proposito-item">
-          <span>02</span>
-          <h3>ALMA</h3>
-        </div>
+  </div>
 
-        <div class="proposito-item">
-          <span>03</span>
-          <h3>CUERPO</h3>
-        </div>
+</section>
 
+
+<!-- =====================================================
+     CUÁNDO
+===================================================== -->
+
+<section class="cuando" id="cuando">
+
+  <div class="container">
+
+    <h2 class="titulo-seccion">
+      ¿Cuándo?
+    </h2>
+
+    <div class="subrayado"></div>
+
+    <div class="fecha-grande">
+      <span>24 · 25 · 26</span>
+      Septiembre 2026
+    </div>
+
+    <div class="faltan">
+      Faltan solo:
+    </div>
+
+    <div class="contador">
+
+      <div class="contador-box">
+        <div class="contador-numero dias">00</div>
+        <div class="contador-label">Días</div>
+      </div>
+
+      <div class="contador-box">
+        <div class="contador-numero horas">00</div>
+        <div class="contador-label">Horas</div>
+      </div>
+
+      <div class="contador-box">
+        <div class="contador-numero minutos">00</div>
+        <div class="contador-label">Minutos</div>
+      </div>
+
+      <div class="contador-box">
+        <div class="contador-numero segundos">00</div>
+        <div class="contador-label">Segundos</div>
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- CUÁNDO -->
+<!-- =====================================================
+     ORADORES
+===================================================== -->
 
-  <section class="cuando" id="cuando">
+<section class="oradores" id="oradores">
 
-    <div class="cuando-content">
+  <div class="container">
 
-      <p class="section-label">
-        ¿CUÁNDO?
-      </p>
+    <h2 class="titulo-seccion">
+      Oradores
+    </h2>
 
-      <h2>
-        24 · 25 · 26<br>SEPTIEMBRE
-      </h2>
+    <div class="subrayado"></div>
 
-      <div class="dias-evento">
+    <div class="oradores-grid">
 
-        <div class="dia">
-          <small>JUEVES</small>
-          <strong>24</strong>
-          <span>19:00 hs</span>
-        </div>
+      <article class="orador">
 
-        <div class="dia">
-          <small>VIERNES</small>
-          <strong>25</strong>
-          <span>19:00 hs</span>
-        </div>
+        <img
+          src="pastor-arsenio.jpeg"
+          alt="Pastor Arsenio Ramírez"
+          class="orador-foto"
+        >
 
-        <div class="dia">
-          <small>SÁBADO</small>
-          <strong>26</strong>
-          <span>19:00 hs</span>
-        </div>
+        <h3>
+          Ps. Arsenio Ramírez
+        </h3>
 
+        <p>
+          Casa de Oración Guadalajara · México
+        </p>
+
+      </article>
+
+
+      <article class="orador">
+
+        <img
+          src="pastora-monica.jpeg"
+          alt="Pastora Mónica Ramírez"
+          class="orador-foto"
+        >
+
+        <h3>
+          Ps. Mónica Ramírez
+        </h3>
+
+        <p>
+          Casa de Oración · México
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRAMA
+===================================================== -->
+
+<section class="programa" id="programa">
+
+  <div class="container">
+
+    <h2 class="titulo-seccion">
+      Programa
+    </h2>
+
+    <div class="programa-sub">
+      de mensajes
+    </div>
+
+    <div class="programa-panel">
+
+      <div class="programa-item">
+        <h3>Jueves 24/09 | 19:30 hs</h3>
       </div>
 
-      <p class="countdown-title">
-        Faltan
-      </p>
+      <div class="programa-item">
+        <h3>Viernes 25/09 | 19:30 hs</h3>
+      </div>
 
-      <div class="countdown">
+      <div class="programa-item">
+        <h3>Sábado 26/09 | 16:30 hs</h3>
+        <p>Taller chicos & chicas</p>
+      </div>
 
-        <div class="count-item">
-          <span class="count-number" id="days">00</span>
-          <span class="count-label">Días</span>
-        </div>
+      <div class="programa-item">
+        <h3>Sábado 26/09 | 19:30 hs</h3>
+        <p>Cierre Desafío Juvenil</p>
+      </div>
 
-        <div class="count-item">
-          <span class="count-number" id="hours">00</span>
-          <span class="count-label">Horas</span>
-        </div>
-
-        <div class="count-item">
-          <span class="count-number" id="minutes">00</span>
-          <span class="count-label">Minutos</span>
-        </div>
-
-        <div class="count-item">
-          <span class="count-number" id="seconds">00</span>
-          <span class="count-label">Segundos</span>
-        </div>
-
+      <div class="programa-item">
+        <h3>Domingo 27/09 | 09:30 hs · 18:00 hs</h3>
+        <p>Para familias</p>
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <!-- ORADORES -->
+<!-- =====================================================
+     UBICACIÓN
+===================================================== -->
 
-  <section class="oradores" id="oradores">
+<section class="ubicacion" id="ubicacion">
 
-    <div class="oradores-content">
+  <div class="container">
 
-      <p class="section-label">
-        ORADORES
-      </p>
+    <h2 class="titulo-seccion">
+      ¿En dónde es el evento?
+    </h2>
 
-      <h2>
-        NUESTROS<br>INVITADOS
-      </h2>
+    <div class="subrayado"></div>
 
-      <div class="oradores-grid">
+    <div class="direccion">
+      <strong>Casa de Oración Ciudad del Este</strong><br>
+      Ciudad del Este · Alto Paraná · Paraguay
+    </div>
 
-        <div class="orador">
+    <div class="mapa">
 
-          <p class="orador-numero">01</p>
+      <iframe
+        src="https://www.google.com/maps?q=-25.5162996,-54.6800575&z=16&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Casa de Oración Ciudad del Este">
+      </iframe>
 
-          <h3>
-            Ps. Arsenio<br>Ramírez
-          </h3>
+    </div>
 
-          <p>
-            Casa de Oración Guadalajara<br>
-            México
-          </p>
+    <a
+      href="https://maps.app.goo.gl/AuGz2DwEq3k7kvUc7"
+      target="_blank"
+      rel="noopener"
+      class="maps-btn">
+      <i class="fa-solid fa-location-dot"></i>
+      &nbsp; Abrir en Google Maps
+    </a>
 
-        </div>
+  </div>
 
-        <div class="orador">
+</section>
 
-          <p class="orador-numero">02</p>
 
-          <h3>
-            Ps. Mónica<br>Ramírez
-          </h3>
+<!-- =====================================================
+     HOTELES
+===================================================== -->
 
-          <p>
-            Casa de Oración México<br>
-            México
-          </p>
+<section class="hoteles" id="hospedaje">
+
+  <div class="container">
+
+    <h2 class="titulo-seccion">
+      Hoteles cercanos
+    </h2>
+
+    <div class="subrayado"></div>
+
+    <div class="importante">
+
+      <strong>IMPORTANTE</strong>
+
+      Esta lista se proporciona únicamente con fines informativos.
+      Casa de Oración y Desafío Juvenil no mantienen convenio ni
+      acuerdo de colaboración con los hoteles mencionados.
+      La contratación de hospedaje, alimentación y cualquier otro
+      servicio es responsabilidad exclusiva de cada visitante.
+      Los establecimientos se mencionan por su ubicación y como
+      referencia para quienes nos visitan. Precios, disponibilidad
+      y condiciones deben ser consultados directamente con cada hotel.
+
+    </div>
+
+
+    <!-- DAZZLER -->
+
+    <article class="hotel">
+
+      <div class="hotel-img">
+        <img
+          src="dazzlercde.jpg"
+          alt="Dazzler by Wyndham Ciudad del Este">
+      </div>
+
+      <div class="hotel-info">
+
+        <h3>
+          Dazzler by Wyndham
+        </h3>
+
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          Km 8 Monday, Ciudad del Este, Paraguay
+        </p>
+
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          +595 61 577 101
+        </p>
+
+        <div class="hotel-links">
+
+          <a
+            class="hotel-btn"
+            href="tel:+59561577101">
+            Llamar
+          </a>
+
+          <a
+            class="hotel-btn"
+            href="https://www.google.com/maps/search/?api=1&query=Dazzler+by+Wyndham+Ciudad+del+Este"
+            target="_blank"
+            rel="noopener">
+            Ver en Maps
+          </a>
 
         </div>
 
       </div>
 
+    </article>
+
+
+    <!-- ASUNCIÓN GRAN HOTEL -->
+
+    <article class="hotel">
+
+      <div class="hotel-img">
+        <img
+          src="granasuncioncde.jpg"
+          alt="Asunción Gran Hotel Ciudad del Este">
+      </div>
+
+      <div class="hotel-info">
+
+        <h3>
+          Asunción Gran Hotel
+        </h3>
+
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          Av. Monseñor Rodríguez Km 5,
+          Ciudad del Este, Paraguay
+        </p>
+
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          +595 983 970 088
+        </p>
+
+        <div class="hotel-links">
+
+          <a
+            class="hotel-btn"
+            href="tel:+595983970088">
+            Llamar
+          </a>
+
+          <a
+            class="hotel-btn"
+            href="https://www.google.com/maps/search/?api=1&query=Asuncion+Gran+Hotel+Ciudad+del+Este"
+            target="_blank"
+            rel="noopener">
+            Ver en Maps
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- NOBILE -->
+
+    <article class="hotel">
+
+      <div class="hotel-img">
+        <img
+          src="nobilecde.png"
+          alt="Nobile Hotel Convention Ciudad del Este">
+      </div>
+
+      <div class="hotel-info">
+
+        <h3>
+          Nobile Hotel Convention
+        </h3>
+
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          Av. Quito Km 7 · Acaray, Ciudad del Este, Paraguay
+        </p>
+
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          +595 994 193 139
+        </p>
+
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          reservas.gnc@nobilehoteles.com
+        </p>
+
+        <div class="hotel-links">
+
+          <a
+            class="hotel-btn"
+            href="tel:+595994193139">
+            Llamar
+          </a>
+
+          <a
+            class="hotel-btn"
+            href="https://www.google.com/maps/search/?api=1&query=Nobile+Hotel+Convention+Ciudad+del+Este"
+            target="_blank"
+            rel="noopener">
+            Ver en Maps
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CIERRE CON FOTO
+===================================================== -->
+
+<section class="cierre">
+
+  <div class="cierre-content">
+
+    <h2>
+      Desafío Juvenil<br>
+      Ciudad del Este
+    </h2>
+
+    <div class="cierre-linea"></div>
+
+    <p class="cierre-texto">
+      ¡Apartá las fechas y preparate para recibir
+      todo lo que Dios tiene para nosotros!
+    </p>
+
+    <div class="cierre-fecha">
+      24, 25 y 26 de Septiembre 2026
     </div>
 
-  </section>
+    <div class="faltan">
+      Faltan solo:
+    </div>
+
+    <div class="contador">
+
+      <div class="contador-box">
+        <div class="contador-numero dias">00</div>
+        <div class="contador-label">Días</div>
+      </div>
+
+      <div class="contador-box">
+        <div class="contador-numero horas">00</div>
+        <div class="contador-label">Horas</div>
+      </div>
+
+      <div class="contador-box">
+        <div class="contador-numero minutos">00</div>
+        <div class="contador-label">Minutos</div>
+      </div>
+
+      <div class="contador-box">
+        <div class="contador-numero segundos">00</div>
+        <div class="contador-label">Segundos</div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-  <script>
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-    const eventDate = new Date("2026-09-24T19:00:00-03:00");
+<footer>
 
-    function updateCountdown() {
+  <img
+    src="logo-iglesia-juvenil.png"
+    alt="Iglesia Juvenil CDE"
+    class="footer-logo">
 
-      const now = new Date();
-      const difference = eventDate - now;
+  <h2>
+    Desafío<br>
+    Juvenil.
+  </h2>
 
-      if (difference <= 0) {
+  <div class="sociales">
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+    <!-- INSTAGRAM IGLESIA JUVENIL -->
 
-        return;
-      }
+    <a
+      href="https://www.instagram.com/cdeiglesiajuvenil"
+      target="_blank"
+      rel="noopener"
+      aria-label="Instagram Iglesia Juvenil">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
 
-      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
-      const hours = Math.floor(
-        (difference / (1000 * 60 * 60)) % 24
-      );
+    <!-- INSTAGRAM CASA DE ORACIÓN -->
 
-      const minutes = Math.floor(
-        (difference / (1000 * 60)) % 60
-      );
+    <a
+      href="https://www.instagram.com/casadeoracion_cde"
+      target="_blank"
+      rel="noopener"
+      aria-label="Instagram Casa de Oración">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
 
-      const seconds = Math.floor(
-        (difference / 1000) % 60
-      );
 
-      document.getElementById("days").textContent =
-        String(days).padStart(2, "0");
+    <!-- FACEBOOK CASA DE ORACIÓN -->
 
-      document.getElementById("hours").textContent =
-        String(hours).padStart(2, "0");
+    <a
+      href="https://www.facebook.com/share/1DYinvD3pu/?mibextid=wwXIfr"
+      target="_blank"
+      rel="noopener"
+      aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
 
-      document.getElementById("minutes").textContent =
-        String(minutes).padStart(2, "0");
+  </div>
 
-      document.getElementById("seconds").textContent =
-        String(seconds).padStart(2, "0");
+  <div class="copyright">
+    © 2026 DESAFÍO JUVENIL<br>
+    TODOS LOS DERECHOS RESERVADOS
+  </div>
 
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+  /* MENÚ MÓVIL */
+
+  function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("activo");
+  }
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("navLinks").classList.remove("activo");
+    });
+  });
+
+
+  /* ===================================================
+     CONTADOR
+
+     Inicio:
+     Jueves 24 de septiembre de 2026
+     19:30 hs - Paraguay (-03:00)
+  =================================================== */
+
+  const fechaEvento =
+    new Date("2026-09-24T19:30:00-03:00").getTime();
+
+
+  function actualizarContador(){
+
+    const ahora = new Date().getTime();
+
+    let distancia = fechaEvento - ahora;
+
+    if(distancia < 0){
+      distancia = 0;
     }
 
-    updateCountdown();
+    const dias =
+      Math.floor(distancia / (1000 * 60 * 60 * 24));
 
-    setInterval(updateCountdown, 1000);
+    const horas =
+      Math.floor(
+        (distancia % (1000 * 60 * 60 * 24))
+        / (1000 * 60 * 60)
+      );
 
-  </script>
+    const minutos =
+      Math.floor(
+        (distancia % (1000 * 60 * 60))
+        / (1000 * 60)
+      );
+
+    const segundos =
+      Math.floor(
+        (distancia % (1000 * 60))
+        / 1000
+      );
+
+
+    document.querySelectorAll(".dias")
+      .forEach(el =>
+        el.textContent = String(dias).padStart(2,"0")
+      );
+
+    document.querySelectorAll(".horas")
+      .forEach(el =>
+        el.textContent = String(horas).padStart(2,"0")
+      );
+
+    document.querySelectorAll(".minutos")
+      .forEach(el =>
+        el.textContent = String(minutos).padStart(2,"0")
+      );
+
+    document.querySelectorAll(".segundos")
+      .forEach(el =>
+        el.textContent = String(segundos).padStart(2,"0")
+      );
+
+  }
+
+
+  actualizarContador();
+
+  setInterval(actualizarContador,1000);
+
+</script>
+
 
 </body>
-
 </html>
