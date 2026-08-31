@@ -7,22 +7,17 @@
   <title>Desafío Juvenil 2026 | Sed Santos</title>
 
   <meta name="description"
-        content="Desafío Juvenil 2026 - Sed Santos. Casa de Oración Ciudad del Este, Paraguay. 24 al 27 de septiembre de 2026.">
+        content="Desafío Juvenil 2026 - Sed Santos. Casa de Oración Ciudad del Este, Paraguay. 24 al 27 de septiembre de 2026. Evento gratuito.">
 
-  <!-- FUENTES -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- ICONOS -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   <style>
-
-    /* =====================================================
-       CONFIGURACIÓN GENERAL
-    ===================================================== */
 
     :root{
       --rojo:#ed171f;
@@ -86,9 +81,10 @@
       margin:25px auto 35px;
     }
 
-    /* =====================================================
+
+    /* =========================
        NAVEGACIÓN
-    ===================================================== */
+    ========================= */
 
     nav{
       position:fixed;
@@ -144,9 +140,10 @@
       cursor:pointer;
     }
 
-    /* =====================================================
+
+    /* =========================
        HERO
-    ===================================================== */
+    ========================= */
 
     .hero{
       min-height:100vh;
@@ -205,34 +202,36 @@
       margin:15px 0 42px;
     }
 
-    /* VERSÍCULO estilo fuerte */
-
     .versiculo{
-      max-width:900px;
+      max-width:880px;
       margin:auto;
     }
+
+    /*
+      REDUCIDO respecto a la versión anterior
+    */
 
     .versiculo-texto{
       font-family:'Anton',sans-serif;
       text-transform:uppercase;
-      font-size:clamp(2rem,5vw,4.7rem);
-      line-height:1.05;
+      font-size:clamp(1.55rem,3.5vw,3.15rem);
+      line-height:1.08;
       letter-spacing:.5px;
     }
 
     .versiculo-ref{
       display:block;
-      margin-top:22px;
+      margin-top:18px;
       color:var(--rojo);
       font-family:'Anton',sans-serif;
-      font-size:clamp(1.5rem,3vw,2.5rem);
+      font-size:clamp(1.15rem,2.2vw,1.8rem);
       text-transform:uppercase;
       letter-spacing:2px;
     }
 
     .hero-btn{
       display:inline-block;
-      margin-top:45px;
+      margin-top:42px;
       padding:15px 35px;
       border:2px solid white;
       border-radius:100px;
@@ -259,9 +258,10 @@
       50%{transform:translateY(10px);}
     }
 
-    /* =====================================================
+
+    /* =========================
        QUÉ ES
-    ===================================================== */
+    ========================= */
 
     .que-es{
       background:var(--rojo);
@@ -281,9 +281,10 @@
       font-weight:900;
     }
 
-    /* =====================================================
+
+    /* =========================
        PROPÓSITO
-    ===================================================== */
+    ========================= */
 
     .proposito{
       background:#050505;
@@ -299,12 +300,57 @@
       font-size:1.05rem;
     }
 
+    .proposito-generacion{
+      max-width:900px;
+      margin:50px auto 0;
+      font-size:clamp(1rem,2vw,1.18rem);
+      line-height:1.9;
+      color:#eee;
+    }
+
+    .juan{
+      max-width:900px;
+      margin:55px auto;
+      padding:40px 25px;
+      border-top:1px solid rgba(255,255,255,.25);
+      border-bottom:1px solid rgba(255,255,255,.25);
+    }
+
+    .juan-texto{
+      font-family:'Anton',sans-serif;
+      font-size:clamp(2.1rem,5vw,4.8rem);
+      line-height:1.05;
+      text-transform:uppercase;
+    }
+
+    .juan-ref{
+      display:block;
+      margin-top:18px;
+      color:var(--rojo);
+      font-weight:800;
+      letter-spacing:3px;
+      text-transform:uppercase;
+    }
+
+    .llamado{
+      max-width:900px;
+      margin:50px auto;
+      font-size:clamp(1.1rem,2.4vw,1.5rem);
+      line-height:1.8;
+      font-weight:600;
+    }
+
+    .llamado strong{
+      color:var(--rojo);
+      font-weight:900;
+    }
+
     .espiritu{
       font-family:'Anton',sans-serif;
       font-size:clamp(3.3rem,9vw,8rem);
       line-height:.95;
       text-transform:uppercase;
-      margin:60px auto;
+      margin:65px auto;
       max-width:1150px;
     }
 
@@ -320,9 +366,10 @@
       color:#cfcfcf;
     }
 
-    /* =====================================================
-       CUÁNDO + CONTADOR
-    ===================================================== */
+
+    /* =========================
+       CUÁNDO
+    ========================= */
 
     .cuando{
       padding:120px 20px;
@@ -340,6 +387,26 @@
 
     .fecha-grande span{
       display:block;
+    }
+
+    .evento-gratuito{
+      display:inline-block;
+      margin-top:48px;
+      padding:14px 28px;
+      border:3px solid white;
+      border-radius:10px;
+
+      font-family:'Anton',sans-serif;
+      font-size:clamp(2rem,5vw,4.2rem);
+      line-height:1;
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    .evento-gratuito i{
+      font-size:.55em;
+      vertical-align:middle;
+      margin-right:8px;
     }
 
     .faltan{
@@ -381,9 +448,10 @@
       font-weight:700;
     }
 
-    /* =====================================================
+
+    /* =========================
        ORADORES
-    ===================================================== */
+    ========================= */
 
     .oradores{
       background:#f5f3ee;
@@ -415,23 +483,33 @@
       box-shadow:0 20px 50px rgba(0,0,0,.15);
     }
 
-    .orador h3{
+    .orador-nombre{
       font-family:'Anton',sans-serif;
       text-transform:uppercase;
-      font-size:2.2rem;
+      font-size:clamp(2rem,4vw,2.8rem);
       line-height:1;
+      letter-spacing:.5px;
     }
 
-    .orador p{
-      color:#555;
-      margin-top:12px;
-      font-size:.9rem;
+    .orador-cargo{
+      margin-top:13px;
+      font-size:1rem;
+      font-weight:800;
+      color:var(--rojo);
+    }
+
+    .orador-iglesia{
+      margin-top:7px;
+      color:#666;
+      font-size:.78rem;
       font-weight:600;
+      letter-spacing:.4px;
     }
 
-    /* =====================================================
+
+    /* =========================
        PROGRAMA
-    ===================================================== */
+    ========================= */
 
     .programa{
       background:var(--rojo);
@@ -482,9 +560,10 @@
       text-transform:uppercase;
     }
 
-    /* =====================================================
+
+    /* =========================
        UBICACIÓN
-    ===================================================== */
+    ========================= */
 
     .ubicacion{
       background:#f5f3ee;
@@ -533,9 +612,10 @@
       font-weight:800;
     }
 
-    /* =====================================================
+
+    /* =========================
        HOTELES
-    ===================================================== */
+    ========================= */
 
     .hoteles{
       padding:130px 20px;
@@ -627,9 +707,38 @@
       border-color:var(--rojo);
     }
 
-    /* =====================================================
+    /* Teko destacado */
+
+    .hotel-destacado{
+      position:relative;
+      padding:30px;
+      border:1px solid rgba(237,23,31,.55);
+      border-radius:35px;
+      background:
+        linear-gradient(135deg,
+        rgba(237,23,31,.09),
+        rgba(255,255,255,.015));
+    }
+
+    .ultimos-lugares{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:20px;
+      padding:9px 15px;
+      border-radius:100px;
+      background:var(--rojo);
+      color:white;
+      font-size:.7rem;
+      font-weight:900;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+    }
+
+
+    /* =========================
        CIERRE
-    ===================================================== */
+    ========================= */
 
     .cierre{
       min-height:720px;
@@ -675,12 +784,25 @@
     .cierre-fecha{
       font-family:'Anton',sans-serif;
       font-size:clamp(2rem,5vw,4rem);
-      margin:30px 0;
+      margin:30px 0 15px;
     }
 
-    /* =====================================================
+    .gratuito-final{
+      display:inline-block;
+      margin-top:5px;
+      padding:8px 17px;
+      border:1px solid white;
+      border-radius:100px;
+      text-transform:uppercase;
+      font-size:.7rem;
+      font-weight:800;
+      letter-spacing:2px;
+    }
+
+
+    /* =========================
        FOOTER
-    ===================================================== */
+    ========================= */
 
     footer{
       background:var(--rojo);
@@ -689,8 +811,8 @@
     }
 
     .footer-logo{
-      width:135px;
-      margin:0 auto 25px;
+      width:155px;
+      margin:0 auto 28px;
     }
 
     footer h2{
@@ -732,9 +854,10 @@
       line-height:1.8;
     }
 
-    /* =====================================================
+
+    /* =========================
        RESPONSIVE
-    ===================================================== */
+    ========================= */
 
     @media(max-width:850px){
 
@@ -782,7 +905,12 @@
       .cierre{
         background-attachment:scroll;
       }
+
+      .hotel-destacado{
+        padding:20px;
+      }
     }
+
 
     @media(max-width:550px){
 
@@ -820,6 +948,10 @@
       footer h2{
         letter-spacing:-2px;
       }
+
+      .evento-gratuito{
+        border-width:2px;
+      }
     }
 
   </style>
@@ -828,22 +960,25 @@
 
 <body>
 
-<!-- =====================================================
-     MENÚ
-===================================================== -->
+
+<!-- MENÚ -->
 
 <nav>
+
   <div class="nav-container">
 
     <a href="#inicio" class="nav-logo">
       <img src="logo-sed-santos.png" alt="Sed Santos">
     </a>
 
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menú">
+    <button class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Abrir menú">
       <i class="fa-solid fa-bars"></i>
     </button>
 
     <ul class="nav-links" id="navLinks">
+
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#que-es">Desafío Juvenil</a></li>
       <li><a href="#proposito">Propósito</a></li>
@@ -852,15 +987,15 @@
       <li><a href="#programa">Programa</a></li>
       <li><a href="#ubicacion">Ubicación</a></li>
       <li><a href="#hospedaje">Hospedaje</a></li>
+
     </ul>
 
   </div>
+
 </nav>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <section class="hero" id="inicio">
 
@@ -873,8 +1008,7 @@
     <img
       src="logo-sed-santos.png"
       alt="Desafío Juvenil 2026 Sed Santos"
-      class="hero-logo"
-    >
+      class="hero-logo">
 
     <div class="hero-fecha">
       24 · 25 · 26 de septiembre · Ciudad del Este
@@ -907,9 +1041,7 @@
 </section>
 
 
-<!-- =====================================================
-     ¿QUÉ ES DESAFÍO JUVENIL?
-===================================================== -->
+<!-- ¿QUÉ ES? -->
 
 <section class="que-es" id="que-es">
 
@@ -953,9 +1085,7 @@
 </section>
 
 
-<!-- =====================================================
-     PROPÓSITO
-===================================================== -->
+<!-- PROPÓSITO -->
 
 <section class="proposito" id="proposito">
 
@@ -968,10 +1098,37 @@
     <div class="subrayado"></div>
 
     <p class="intro">
-      Abordar los desafíos y las dudas que enfrenta el joven cristiano
-      a la luz de la Palabra de Dios, reconociendo en Cristo el recurso ÚNICO y
-      SUFICIENTE para ser fortalecidos en Su amor y formar Su carácter
-      en nuestras vidas.
+      Desafío Juvenil busca abordar los desafíos que enfrenta esta generación
+      a la luz de la Palabra de Dios, reconociendo en Cristo el recurso
+      suficiente para ser fortalecidos, formar Su carácter en nosotros
+      y vivir conforme al propósito para el cual fuimos llamados.
+    </p>
+
+    <p class="proposito-generacion">
+      En medio de una generación que busca satisfacción en tantos lugares,
+      queremos recordar que existe un alimento que el mundo no puede ofrecer
+      y que conduce a la vida eterna. No queremos conformarnos solamente
+      con encuentros o actividades, sino buscar aquello que verdaderamente
+      transforma nuestras vidas: conocer a Dios y Su verdad.
+    </p>
+
+    <div class="juan">
+
+      <div class="juan-texto">
+        “Y conoceréis la verdad,<br>
+        y la verdad os hará libres.”
+      </div>
+
+      <span class="juan-ref">
+        Juan 8:32
+      </span>
+
+    </div>
+
+    <p class="llamado">
+      Por eso, <strong>SED SANTOS</strong> es más que el lema
+      de este año. Es el llamado de Dios para esta generación:
+      <strong>un llamado a vivir en santidad.</strong>
     </p>
 
     <div class="espiritu">
@@ -979,9 +1136,9 @@
     </div>
 
     <p class="proposito-final">
-      Prepararnos integralmente para cumplir el propósito de Dios,
-      viviendo como Sus representantes y reflejando a Cristo
-      en cada área de nuestra vida.
+      Queremos prepararnos integralmente para cumplir el propósito
+      de Dios, viviendo como Sus representantes y reflejando
+      a Cristo en cada área de nuestra vida.
     </p>
 
   </div>
@@ -989,9 +1146,7 @@
 </section>
 
 
-<!-- =====================================================
-     CUÁNDO
-===================================================== -->
+<!-- CUÁNDO -->
 
 <section class="cuando" id="cuando">
 
@@ -1006,6 +1161,11 @@
     <div class="fecha-grande">
       <span>24 · 25 · 26</span>
       Septiembre 2026
+    </div>
+
+    <div class="evento-gratuito">
+      <i class="fa-solid fa-ticket"></i>
+      Evento gratuito
     </div>
 
     <div class="faltan">
@@ -1041,9 +1201,7 @@
 </section>
 
 
-<!-- =====================================================
-     ORADORES
-===================================================== -->
+<!-- ORADORES -->
 
 <section class="oradores" id="oradores">
 
@@ -1057,40 +1215,51 @@
 
     <div class="oradores-grid">
 
+
+      <!-- ARSENIO -->
+
       <article class="orador">
 
         <img
           src="pastor-arsenio.jpeg"
-          alt="Pastor Arsenio Ramírez"
-          class="orador-foto"
-        >
+          alt="Pr. Arsenio Ramírez"
+          class="orador-foto">
 
-        <h3>
-          Ps. Arsenio Ramírez
+        <h3 class="orador-nombre">
+          Pr. Arsenio Ramírez
         </h3>
 
-        <p>
+        <div class="orador-cargo">
+          Pastor de Jóvenes
+        </div>
+
+        <div class="orador-iglesia">
           Casa de Oración Guadalajara · México
-        </p>
+        </div>
 
       </article>
 
+
+      <!-- MÓNICA -->
 
       <article class="orador">
 
         <img
           src="pastora-monica.jpeg"
-          alt="Pastora Mónica Ramírez"
-          class="orador-foto"
-        >
+          alt="Pr. Mónica Ramírez"
+          class="orador-foto">
 
-        <h3>
-          Ps. Mónica Ramírez
+        <h3 class="orador-nombre">
+          Pr. Mónica Ramírez
         </h3>
 
-        <p>
-          Casa de Oración · México
-        </p>
+        <div class="orador-cargo">
+          Pastora de Jóvenes
+        </div>
+
+        <div class="orador-iglesia">
+          Casa de Oración Guadalajara · México
+        </div>
 
       </article>
 
@@ -1101,9 +1270,7 @@
 </section>
 
 
-<!-- =====================================================
-     PROGRAMA
-===================================================== -->
+<!-- PROGRAMA -->
 
 <section class="programa" id="programa">
 
@@ -1149,9 +1316,7 @@
 </section>
 
 
-<!-- =====================================================
-     UBICACIÓN
-===================================================== -->
+<!-- UBICACIÓN -->
 
 <section class="ubicacion" id="ubicacion">
 
@@ -1184,8 +1349,10 @@
       target="_blank"
       rel="noopener"
       class="maps-btn">
+
       <i class="fa-solid fa-location-dot"></i>
       &nbsp; Abrir en Google Maps
+
     </a>
 
   </div>
@@ -1193,9 +1360,7 @@
 </section>
 
 
-<!-- =====================================================
-     HOTELES
-===================================================== -->
+<!-- HOSPEDAJE -->
 
 <section class="hoteles" id="hospedaje">
 
@@ -1213,14 +1378,74 @@
 
       Esta lista se proporciona únicamente con fines informativos.
       Casa de Oración y Desafío Juvenil no mantienen convenio ni
-      acuerdo de colaboración con los hoteles mencionados.
+      acuerdo de colaboración con los establecimientos mencionados.
       La contratación de hospedaje, alimentación y cualquier otro
       servicio es responsabilidad exclusiva de cada visitante.
-      Los establecimientos se mencionan por su ubicación y como
-      referencia para quienes nos visitan. Precios, disponibilidad
-      y condiciones deben ser consultados directamente con cada hotel.
+      Precios, disponibilidad y condiciones deben ser consultados
+      directamente con cada establecimiento.
 
     </div>
+
+
+   <!-- TEKO ARTE HOSTEL -->
+
+<article class="hotel hotel-destacado">
+
+  <div class="hotel-img">
+
+    <img
+      src="tekocde.png"
+      alt="Teko Arte Hostel Ciudad del Este">
+
+  </div>
+
+  <div class="hotel-info">
+
+    <div class="ultimos-lugares">
+      <i class="fa-solid fa-circle-exclamation"></i>
+      ¡Últimos lugares disponibles!
+    </div>
+
+    <h3>
+      Teko Arte Hostel
+    </h3>
+
+    <p>
+      <i class="fa-solid fa-location-dot"></i>
+      Ciudad del Este · Paraguay
+    </p>
+
+    <p>
+      <i class="fa-solid fa-phone"></i>
+      +595 61 518 408
+    </p>
+
+    <p>
+      Una opción de hospedaje ideal para quienes nos visitan
+      durante Desafío Juvenil.
+    </p>
+
+    <div class="hotel-links">
+
+      <a
+        class="hotel-btn"
+        href="tel:+59561518408">
+        Llamar
+      </a>
+
+      <a
+        class="hotel-btn"
+        href="https://maps.app.goo.gl/Er93AUZkfeXKbudZ9?g_st=iw"
+        target="_blank"
+        rel="noopener">
+        Ver en Maps
+      </a>
+
+    </div>
+
+  </div>
+
+</article>
 
 
     <!-- DAZZLER -->
@@ -1228,9 +1453,11 @@
     <article class="hotel">
 
       <div class="hotel-img">
+
         <img
           src="dazzlercde.jpg"
           alt="Dazzler by Wyndham Ciudad del Este">
+
       </div>
 
       <div class="hotel-info">
@@ -1277,9 +1504,11 @@
     <article class="hotel">
 
       <div class="hotel-img">
+
         <img
           src="granasuncioncde.jpg"
           alt="Asunción Gran Hotel Ciudad del Este">
+
       </div>
 
       <div class="hotel-info">
@@ -1327,9 +1556,11 @@
     <article class="hotel">
 
       <div class="hotel-img">
+
         <img
           src="nobilecde.png"
           alt="Nobile Hotel Convention Ciudad del Este">
+
       </div>
 
       <div class="hotel-info">
@@ -1340,7 +1571,8 @@
 
         <p>
           <i class="fa-solid fa-location-dot"></i>
-          Av. Quito Km 7 · Acaray, Ciudad del Este, Paraguay
+          Av. Quito Km 7 · Acaray,
+          Ciudad del Este, Paraguay
         </p>
 
         <p>
@@ -1380,9 +1612,7 @@
 </section>
 
 
-<!-- =====================================================
-     CIERRE CON FOTO
-===================================================== -->
+<!-- CIERRE -->
 
 <section class="cierre">
 
@@ -1402,6 +1632,10 @@
 
     <div class="cierre-fecha">
       24, 25 y 26 de Septiembre 2026
+    </div>
+
+    <div class="gratuito-final">
+      Entrada gratuita
     </div>
 
     <div class="faltan">
@@ -1437,9 +1671,7 @@
 </section>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1455,74 +1687,81 @@
 
   <div class="sociales">
 
-    <!-- INSTAGRAM IGLESIA JUVENIL -->
-
     <a
       href="https://www.instagram.com/cdeiglesiajuvenil"
       target="_blank"
       rel="noopener"
       aria-label="Instagram Iglesia Juvenil">
+
       <i class="fa-brands fa-instagram"></i>
+
     </a>
 
-
-    <!-- INSTAGRAM CASA DE ORACIÓN -->
 
     <a
       href="https://www.instagram.com/casadeoracion_cde"
       target="_blank"
       rel="noopener"
       aria-label="Instagram Casa de Oración">
+
       <i class="fa-brands fa-instagram"></i>
+
     </a>
 
-
-    <!-- FACEBOOK CASA DE ORACIÓN -->
 
     <a
       href="https://www.facebook.com/share/1DYinvD3pu/?mibextid=wwXIfr"
       target="_blank"
       rel="noopener"
       aria-label="Facebook">
+
       <i class="fa-brands fa-facebook-f"></i>
+
     </a>
 
   </div>
 
   <div class="copyright">
+
     © 2026 DESAFÍO JUVENIL<br>
     TODOS LOS DERECHOS RESERVADOS
+
   </div>
 
 </footer>
 
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
 
 <script>
 
   /* MENÚ MÓVIL */
 
   function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("activo");
+
+    document
+      .getElementById("navLinks")
+      .classList
+      .toggle("activo");
+
   }
 
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      document.getElementById("navLinks").classList.remove("activo");
+
+  document
+    .querySelectorAll(".nav-links a")
+    .forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        document
+          .getElementById("navLinks")
+          .classList
+          .remove("activo");
+
+      });
+
     });
-  });
 
 
-  /* ===================================================
-     CONTADOR
-
-     Inicio:
-     Jueves 24 de septiembre de 2026
-     19:30 hs - Paraguay (-03:00)
-  =================================================== */
+  /* CONTADOR */
 
   const fechaEvento =
     new Date("2026-09-24T19:30:00-03:00").getTime();
@@ -1538,46 +1777,67 @@
       distancia = 0;
     }
 
+
     const dias =
-      Math.floor(distancia / (1000 * 60 * 60 * 24));
+      Math.floor(
+        distancia /
+        (1000 * 60 * 60 * 24)
+      );
+
 
     const horas =
       Math.floor(
-        (distancia % (1000 * 60 * 60 * 24))
-        / (1000 * 60 * 60)
+        (distancia %
+        (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
       );
+
 
     const minutos =
       Math.floor(
-        (distancia % (1000 * 60 * 60))
-        / (1000 * 60)
+        (distancia %
+        (1000 * 60 * 60)) /
+        (1000 * 60)
       );
+
 
     const segundos =
       Math.floor(
-        (distancia % (1000 * 60))
-        / 1000
+        (distancia %
+        (1000 * 60)) /
+        1000
       );
 
 
-    document.querySelectorAll(".dias")
+    document
+      .querySelectorAll(".dias")
       .forEach(el =>
-        el.textContent = String(dias).padStart(2,"0")
+        el.textContent =
+        String(dias).padStart(2,"0")
       );
 
-    document.querySelectorAll(".horas")
+
+    document
+      .querySelectorAll(".horas")
       .forEach(el =>
-        el.textContent = String(horas).padStart(2,"0")
+        el.textContent =
+        String(horas).padStart(2,"0")
       );
 
-    document.querySelectorAll(".minutos")
+
+    document
+      .querySelectorAll(".minutos")
       .forEach(el =>
-        el.textContent = String(minutos).padStart(2,"0")
+        el.textContent =
+        String(minutos).padStart(2,"0")
       );
 
-    document.querySelectorAll(".segundos")
+
+    document
+      .querySelectorAll(".segundos")
       .forEach(el =>
-        el.textContent = String(segundos).padStart(2,"0")
+        el.textContent =
+        String(segundos).padStart(2,"0")
       );
 
   }
@@ -1585,7 +1845,10 @@
 
   actualizarContador();
 
-  setInterval(actualizarContador,1000);
+  setInterval(
+    actualizarContador,
+    1000
+  );
 
 </script>
 
